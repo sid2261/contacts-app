@@ -9,4 +9,5 @@ Currently, two official plugins are available:
 
 
 ## Basic Structure Completed
-<img width="1440" alt="Screenshot 2023-09-06 at 1 05 07 AM" src="https://github.com/sid2261/contacts-app/assets/84562460/b17d3bbb-d269-4c4f-8836-bcc9dac71dfa">
+
+<img width="1440" alt="Screenshot 2023-09-06 at 1 08 22 AM" src="https://github.com/sid2261/contacts-app/assets/84562460/f05094f3-c48f-48a9-8a10-57cd6f3fbcc0">
