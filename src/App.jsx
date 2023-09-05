@@ -2,34 +2,69 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import{ css } from "@emotion/react";
+import { Outlet } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Sidenav() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <aside
+      css={css`
+        border-right: 1px solid;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      `}
+      >
+      <header css={css`
+          border-bottom: 1px solid;
+          padding: 16px;
+          `}
+        >
+        <form 
+            css={css`
+            display: flex;
+            justify-content: space-between;
+            `}
+          >
+          <input type='text'/>
+          <button>Search</button>
+        </form>
+      </header>
+      <section
+        css={css`
+            padding:16px;
+            `}
+            >list of contacts</section>
+      <footer
+        css={css`
+          border-top: 1px solid;
+          padding: 16px;
+          `}
+        >
+        footer</footer>
+    </aside>
+  )
+}
+function Contents(){
+  return (
+    <section>
+    <Outlet/>
+    </section>
   )
 }
 
-export default App
+
+
+export function Layout(){
+  return (
+    <>
+      <main css={css`
+        display:grid ;
+        grid-template-columns: minmax(250px, 25%) 1fr;
+        height: 100%;
+      `}>
+        <Sidenav/>
+        <Contents/>
+      </main>
+    </>
+  )
+}
