@@ -6,11 +6,12 @@ import { createBrowserRouter } from "react-router-dom";
 import { createRoutesFromElements } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
+import { loadContacts } from './loaders.js';
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-      <Route path="/" element={<Layout/>}>
+      <Route path="/" element={<Layout/>} loader={loadContacts}>
         <Route path="/contact/:contactId" element={<div>contacts</div>}/>
       </Route>
   )

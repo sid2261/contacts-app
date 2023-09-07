@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import{ css } from "@emotion/react";
 import { Outlet } from 'react-router-dom';
+import ContactList from './contactList';
+
 
 function Sidenav() {
   return (
@@ -33,7 +35,9 @@ function Sidenav() {
         css={css`
             padding:16px;
             `}
-            >list of contacts</section>
+            >
+            <ContactList/>
+            </section>
       <footer
         css={css`
           border-top: 1px solid;
